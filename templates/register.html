@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register - Khit's Bookshop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+        }
+        .navbar {
+            background-color: #000000 !important;
+            border-bottom: 2px solid #00ff00;
+        }
+        .terminal-text {
+            font-family: 'Courier New', monospace;
+            color: #00ff00;
+        }
+        .btn-hack {
+            background-color: #000;
+            border: 1px solid #00ff00;
+            color: #00ff00;
+        }
+        .btn-hack:hover {
+            background-color: #00ff00;
+            color: #000;
+        }
+        .form-control {
+            background-color: #000;
+            border: 1px solid #00ff00;
+            color: #00ff00;
+        }
+        .form-control:focus {
+            background-color: #000;
+            border: 2px solid #00ff00;
+            color: #00ff00;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+        }
+        .register-box {
+            background-color: #2a2a2a;
+            border: 1px solid #00ff00;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand terminal-text" href="/">
+                <i class="fas fa-terminal"></i> Khit's Bookshop
+            </a>
+            <div class="ms-auto">
+                <a href="/login" class="btn btn-hack me-2">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </a>
+                <a href="/register" class="btn btn-hack">
+                    <i class="fas fa-user-plus"></i> Register
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="register-box">
+                    <h2 class="text-center mb-4 terminal-text">
+                        <i class="fas fa-user-plus"></i> Register
+                    </h2>
+                    <form action="/register" method="post">
+                        <div class="mb-3">
+                            <label for="username" class="form-label terminal-text">
+                                <i class="fas fa-user"></i> Username
+                            </label>
+                            <input type="text" class="form-control" id="username" name="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label terminal-text">
+                                <i class="fas fa-envelope"></i> Email
+                            </label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label terminal-text">
+                                <i class="fas fa-lock"></i> Password
+                            </label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirm_password" class="form-label terminal-text">
+                                <i class="fas fa-lock"></i> Confirm Password
+                            </label>
+                            <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+                        </div>
+                        <hr class="border-success my-4">
+                        <h5 class="terminal-text mb-3">
+                            <i class="fas fa-credit-card"></i> Payment Information
+                        </h5>
+                        <div class="mb-3">
+                            <label for="credit_card_number" class="form-label terminal-text">
+                                <i class="fas fa-credit-card"></i> Credit Card Number
+                            </label>
+                            <input type="text" class="form-control" id="credit_card_number" name="credit_card_number" 
+                                   pattern="\d{4}-\d{4}-\d{4}-\d{4}" 
+                                   placeholder="xxxx-xxxx-xxxx-xxxx" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="credit_card_expiry" class="form-label terminal-text">
+                                    <i class="fas fa-calendar"></i> Expiry Date
+                                </label>
+                                <input type="text" class="form-control" id="credit_card_expiry" name="credit_card_expiry" 
+                                       pattern="\d{2}/\d{2}" 
+                                       placeholder="MM/YY" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="credit_card_cvv" class="form-label terminal-text">
+                                    <i class="fas fa-shield-alt"></i> CVV
+                                </label>
+                                <input type="text" class="form-control" id="credit_card_cvv" name="credit_card_cvv" 
+                                       pattern="\d{3}" 
+                                       placeholder="123" required>
+                            </div>
+                        </div>
+                        <div class="alert alert-info terminal-text" style="background-color: #000; border-color: #00ff00;">
+                            <i class="fas fa-info-circle"></i> New users get $1,000 initial balance!
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-hack">
+                                <i class="fas fa-user-plus"></i> Register
+                            </button>
+                        </div>
+                    </form>
+                    <div class="text-center mt-3">
+                        <p class="terminal-text">Already have an account? <a href="/login" class="text-success">Login here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

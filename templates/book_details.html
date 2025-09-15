@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename=book[4]) }}" alt="{{ book[1] }}" class="img-fluid rounded">
+        </div>
+        <div class="col-md-8">
+            <h2>{{ book[1] }}</h2>
+            <p class="text-muted">By {{ book[2] }}</p>
+            <hr>
+            <p class="lead">${{ "%.2f"|format(book[3]) }}</p>
+            <p>{{ book[5] }}</p>
+            
+            {% if session.get('user_id') %}
+            <form action="{{ url_for('add_to_cart', book_id=book[0]) }}" method="post" class="d-inline">
+                <button type="submit" class="btn btn-primary">Add to Cart</button>
+            </form>
+            {% else %}
+            <a href="{{ url_for('login') }}" class="btn btn-info">Login to Purchase</a>
+            {% endif %}
+            
+            <a href="{{ url_for('books') }}" class="btn btn-secondary ml-2">Back to Books</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
