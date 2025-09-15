@@ -1,4 +1,4 @@
-# Khit's Bookshop: A Vulnerable Web Application
+# Khit's Bookshop: A Vulnerable Web Application (Medium Level)
 
 This project is a simple, **intentionally vulnerable** e-commerce web application built with **Python Flask** and **SQLite**. It's designed as a hands-on lab environment for learning about a common and critical web security flaw: **SQL Injection**.
 
